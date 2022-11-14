@@ -1,0 +1,177 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Source Files\GameObjects">
+      <UniqueIdentifier>{7e330576-a733-4de9-b6c1-f0c0870e689b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\GameManager">
+      <UniqueIdentifier>{644491fd-daf0-4c83-813f-ac418b9bdfb3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\GameStateManager">
+      <UniqueIdentifier>{308c551d-132d-46f8-9f83-1e93740c3278}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\GameObjects\Player">
+      <UniqueIdentifier>{8d0159ec-3e4c-4b08-97df-73d6bb15cb62}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\GameObjects\Enemy">
+      <UniqueIdentifier>{5765c7e2-2822-48c5-a950-9dd0bcc78f02}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Sources\Application.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Sources\GameObjects\Animation.cpp">
+      <Filter>Source Files\GameObjects</Filter>
+    </ClCompile>
+    <ClCompile Include="Fighter.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Sources\GameManager\ResourceManager.cpp">
+      <Filter>Source Files\GameManager</Filter>
+    </ClCompile>
+    <ClCompile Include="Sources\GameStateManager\GameStateMachine.cpp">
+      <Filter>Source Files\GameStateManager</Filter>
+    </ClCompile>
+    <ClCompile Include="Sources\GameStateManager\GSIntro.cpp">
+      <Filter>Source Files\GameStateManager</Filter>
+    </ClCompile>
+    <ClCompile Include="Sources\GameStateManager\GSMenu.cpp">
+      <Filter>Source Files\GameStateManager</Filter>
+    </ClCompile>
+    <ClCompile Include="Sources\GameStateManager\GameStateBase.cpp">
+      <Filter>Source Files\GameStateManager</Filter>
+    </ClCompile>
+    <ClCompile Include="Sources\GameStateManager\GSPlay.cpp">
+      <Filter>Source Files\GameStateManager</Filter>
+    </ClCompile>
+    <ClCompile Include="Sources\GameStateManager\GSEnd.cpp">
+      <Filter>Source Files\GameStateManager</Filter>
+    </ClCompile>
+    <ClCompile Include="Sources\GameManager\WindowConnector.cpp">
+      <Filter>Source Files\GameManager</Filter>
+    </ClCompile>
+    <ClCompile Include="Sources\GameObjects\GameButton.cpp">
+      <Filter>Source Files\GameObjects</Filter>
+    </ClCompile>
+    <ClCompile Include="Sources\GameObjects\Match.cpp">
+      <Filter>Source Files\GameObjects</Filter>
+    </ClCompile>
+    <ClCompile Include="Sources\GameObjects\Block.cpp">
+      <Filter>Source Files\GameObjects</Filter>
+    </ClCompile>
+    <ClCompile Include="Sources\GameObjects\Player\Player.cpp">
+      <Filter>Source Files\GameObjects\Player</Filter>
+    </ClCompile>
+    <ClCompile Include="Sources\GameObjects\Player\PSAttack.cpp">
+      <Filter>Source Files\GameObjects\Player</Filter>
+    </ClCompile>
+    <ClCompile Include="Sources\GameObjects\Player\PSDeath.cpp">
+      <Filter>Source Files\GameObjects\Player</Filter>
+    </ClCompile>
+    <ClCompile Include="Sources\GameObjects\Player\PSIdle.cpp">
+      <Filter>Source Files\GameObjects\Player</Filter>
+    </ClCompile>
+    <ClCompile Include="Sources\GameObjects\Enemy\Enemy.cpp">
+      <Filter>Source Files\GameObjects\Enemy</Filter>
+    </ClCompile>
+    <ClCompile Include="Sources\GameObjects\Enemy\ESIdle.cpp">
+      <Filter>Source Files\GameObjects\Enemy</Filter>
+    </ClCompile>
+    <ClCompile Include="Sources\GameObjects\Enemy\ESDeath.cpp">
+      <Filter>Source Files\GameObjects\Enemy</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Sources\Application.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Sources\GameObjects\Animation.h">
+      <Filter>Source Files\GameObjects</Filter>
+    </ClInclude>
+    <ClInclude Include="Sources\GameManager\ResourceManager.h">
+      <Filter>Source Files\GameManager</Filter>
+    </ClInclude>
+    <ClInclude Include="Sources\GameManager\Singleton.h">
+      <Filter>Source Files\GameManager</Filter>
+    </ClInclude>
+    <ClInclude Include="Sources\GameStateManager\GameStateBase.h">
+      <Filter>Source Files\GameStateManager</Filter>
+    </ClInclude>
+    <ClInclude Include="Sources\GameStateManager\GameStateMachine.h">
+      <Filter>Source Files\GameStateManager</Filter>
+    </ClInclude>
+    <ClInclude Include="Sources\GameStateManager\GSIntro.h">
+      <Filter>Source Files\GameStateManager</Filter>
+    </ClInclude>
+    <ClInclude Include="Sources\GameStateManager\GSMenu.h">
+      <Filter>Source Files\GameStateManager</Filter>
+    </ClInclude>
+    <ClInclude Include="Sources\GameStateManager\GSPlay.h">
+      <Filter>Source Files\GameStateManager</Filter>
+    </ClInclude>
+    <ClInclude Include="Sources\GameConfig.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Sources\GameStateManager\GSEnd.h">
+      <Filter>Source Files\GameStateManager</Filter>
+    </ClInclude>
+    <ClInclude Include="Sources\GameManager\WindowConnector.h">
+      <Filter>Source Files\GameManager</Filter>
+    </ClInclude>
+    <ClInclude Include="Sources\GameObjects\GameButton.h">
+      <Filter>Source Files\GameObjects</Filter>
+    </ClInclude>
+    <ClInclude Include="Sources\GameObjects\Match.h">
+      <Filter>Source Files\GameObjects</Filter>
+    </ClInclude>
+    <ClInclude Include="Sources\GameObjects\Block.h">
+      <Filter>Source Files\GameObjects</Filter>
+    </ClInclude>
+    <ClInclude Include="Sources\GameObjects\Player\IPlayer.h">
+      <Filter>Source Files\GameObjects\Player</Filter>
+    </ClInclude>
+    <ClInclude Include="Sources\GameObjects\Player\IPState.h">
+      <Filter>Source Files\GameObjects\Player</Filter>
+    </ClInclude>
+    <ClInclude Include="Sources\GameObjects\Player\Player.h">
+      <Filter>Source Files\GameObjects\Player</Filter>
+    </ClInclude>
+    <ClInclude Include="Sources\GameObjects\Player\PSAttack.h">
+      <Filter>Source Files\GameObjects\Player</Filter>
+    </ClInclude>
+    <ClInclude Include="Sources\GameObjects\Player\PSDeath.h">
+      <Filter>Source Files\GameObjects\Player</Filter>
+    </ClInclude>
+    <ClInclude Include="Sources\GameObjects\Player\PSIdle.h">
+      <Filter>Source Files\GameObjects\Player</Filter>
+    </ClInclude>
+    <ClInclude Include="Sources\GameObjects\Enemy\IEState.h">
+      <Filter>Source Files\GameObjects\Enemy</Filter>
+    </ClInclude>
+    <ClInclude Include="Sources\GameObjects\Enemy\IEnemy.h">
+      <Filter>Source Files\GameObjects\Enemy</Filter>
+    </ClInclude>
+    <ClInclude Include="Sources\GameObjects\Enemy\Enemy.h">
+      <Filter>Source Files\GameObjects\Enemy</Filter>
+    </ClInclude>
+    <ClInclude Include="Sources\GameObjects\Enemy\ESIdle.h">
+      <Filter>Source Files\GameObjects\Enemy</Filter>
+    </ClInclude>
+    <ClInclude Include="Sources\GameObjects\Enemy\ESDeath.h">
+      <Filter>Source Files\GameObjects\Enemy</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>

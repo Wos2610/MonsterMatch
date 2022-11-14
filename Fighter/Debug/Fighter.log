@@ -1,0 +1,27 @@
+﻿  Fighter.cpp
+  Application.cpp
+  ResourceManager.cpp
+  WindowConnector.cpp
+  Animation.cpp
+  Enemy.cpp
+  ESDeath.cpp
+  ESIdle.cpp
+  Match.cpp
+C:\Users\LENOVO\source\repos\MonsterMatch\Fighter\Sources\GameObjects\Match.cpp(66,80): warning C4305: 'argument': truncation from 'double' to 'float'
+  GameButton.cpp
+  Block.cpp
+  Player.cpp
+  PSAttack.cpp
+  PSDeath.cpp
+  PSIdle.cpp
+  GameStateBase.cpp
+  GameStateMachine.cpp
+  GSEnd.cpp
+  GSIntro.cpp
+  GSMenu.cpp
+C:\Users\LENOVO\source\repos\MonsterMatch\Fighter\Sources\GameStateManager\GSMenu.cpp(34,27): warning C4305: 'argument': truncation from 'double' to 'float'
+  Generating Code...
+  Compiling...
+  GSPlay.cpp
+  Generating Code...
+  Fighter.vcxproj -> C:\Users\LENOVO\source\repos\MonsterMatch\Debug\Fighter.exe
