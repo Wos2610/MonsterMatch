@@ -19,7 +19,11 @@ void ESDeath::Init(sf::Vector2f startPos, string name, sf::Vector2i frameSheetSi
 
 void ESDeath::Update(float deltaTime)
 {
-	m_animation->Update(deltaTime);
+	m_currentTime += deltaTime;
+	if (m_currentTime <= 1.f) {
+		m_animation->Update(deltaTime);
+	}
+	/*m_animation->Update(deltaTime);*/
 }
 
 void ESDeath::Render(sf::RenderWindow* window)

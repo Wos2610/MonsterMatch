@@ -28,6 +28,10 @@ void PSAttack::Init(sf::Vector2f startPos, string name, sf::Vector2i frameSheetS
 
 void PSAttack::Update(float deltaTime)
 {
+	/*m_currentTime += deltaTime;
+	if (m_currentTime <= 1.f) {
+		m_animation->Update(deltaTime);
+	}*/
 	m_animation->Update(deltaTime);
 }
 

@@ -13,4 +13,6 @@ public:
 private:
 	IPlayer* m_player;
 	Animation* m_animation;
+
+	float m_currentTime;
 };

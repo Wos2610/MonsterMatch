@@ -28,4 +28,7 @@ private:
 	
 	float m_currentTime;
 	float m_clickTime;
+	float m_attackTime;
+
+	sf::Sprite* m_background;
 };

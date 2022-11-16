@@ -9,6 +9,8 @@ public:
 	void CalRectPos();
 	void ApplyRect();
 	void Update(float deltaTime);
+
+
 private:
 	//So frame theo chieu rong, chieu cao
 	sf::Vector2i m_frameNum;
@@ -25,4 +27,5 @@ private:
 	sf::Vector2i m_rectSize;
 	// = m_rectPos + m_rectSize
 	sf::IntRect m_rect;
+
 };

@@ -4,7 +4,7 @@ GSPlay::GSPlay()
 {
 	m_match = new Match();
 	m_player = new Player();
-
+	m_background = new sf::Sprite;
 }
 
 GSPlay::~GSPlay()
@@ -19,6 +19,9 @@ GSPlay::~GSPlay()
 		if (m_monsters[i] != nullptr) {
 			delete m_monsters[i];
 		}
+	}
+	if (m_background != nullptr) {
+		delete m_background;
 	}
 }
 
@@ -51,6 +54,8 @@ void GSPlay::Init()
 		m_monsters[i]->Init({ m_match->getRootMatch().x - 75.f + i * 100, m_match->getRootMatch().y - 60.f }, temp, { 7, 1 }, 2);
 	}
 
+	m_background->setTexture(*DATA->getTexture("play_background"));
+
 }
 
 void GSPlay::Update(float deltaTime)
@@ -68,20 +73,25 @@ void GSPlay::Update(float deltaTime)
 			m_player->changeNextState(IPState::ATTACK);
 			m_match->setConnectedBlock(-1);
 			m_clickTime = m_currentTime;
+			m_attackTime = m_currentTime;
 		}
 		if (m_match->getRevokedBlock() >= 0) {
 			m_monsters[m_match->getRevokedBlock()]->changeNextState(IEState::IDLE);
 			m_match->setRevokedBlock(-1);
 			m_clickTime = m_currentTime;
 		}
+	}
 
+	if (m_currentTime >= m_attackTime + 0.5) {
+		m_player->changeNextState(IPState::IDLE);
 	}
 	
 }
 
 void GSPlay::Render(sf::RenderWindow* window)
 {
-	window->draw(m_sprite);
+	window->draw(*m_background);
+	
 	m_match->Render(window);
 	m_player->Render(window);
 	for (int i = 0; i < m_match->getMonsterNum(); i++) {

@@ -46,6 +46,7 @@ void GSMenu::Init()
 	button->Init();
 	button->setOnClick([]() {GSM->ChangeState(StateTypes::STATE_PLAY); });
 	button->setPosition(SCREENWIDTH / 2, SCREENHEIGHT / 2);
+	button->setTexture(*DATA->getTexture("Button"))
 	button->setFillColor(sf::Color::Red);
 	button->setOrigin(button->getSize() / 2.f);
 	m_ListButton.push_back(button);

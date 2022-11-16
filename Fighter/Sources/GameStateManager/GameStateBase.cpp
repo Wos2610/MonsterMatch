@@ -34,6 +34,9 @@ GameStateBase* GameStateBase::CreateState(StateTypes st) {
 	case STATE_END:
 		gs = new GSEnd();
 		break;
+	case STATE_LEVEL:
+		gs = new GSEnd();
+		break;
 	default:
 		break;
 	}

@@ -17,6 +17,7 @@ enum StateTypes
 	STATE_ABOUT,
 	STATE_PAUSE,
 	STATE_END,
+	STATE_LEVEL
 };
 
 class GameStateMachine :public CSingleton<GameStateMachine> {

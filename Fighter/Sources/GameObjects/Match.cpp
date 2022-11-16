@@ -63,7 +63,7 @@ void Match::initBoard()
 	m_board->setTexture(texture);
 	m_board->setSize(textureSize);
 
-	m_board->setPosition((float)1 / 4.2 * SCREENWIDTH, (float)1 / 5 * SCREENHEIGHT);
+	m_board->setPosition((float)1 / 4.2 * SCREENWIDTH, (float)1 / 4.4 * SCREENHEIGHT);
 
 	// Tinh diem goc trai tren cung cua board
 	m_rootBoard = m_board->getPosition();

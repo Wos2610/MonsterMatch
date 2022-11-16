@@ -12,4 +12,5 @@ public:
 private:
 	IEnemy* m_player;
 	Animation* m_animation;
+	float m_currentTime;
 };
