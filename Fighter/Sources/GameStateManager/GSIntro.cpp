@@ -44,7 +44,7 @@ void GSIntro::Update(float deltaTime)
 		alpha += 1;
 	}
 	// 3.f
-	if (m_currentTime >= 0.f) {
+	if (m_currentTime >= 3.5f) {
 		GameStateMachine::GetInstance()->ChangeState(StateTypes::STATE_MENU);
 	}
 }
@@ -52,4 +52,10 @@ void GSIntro::Update(float deltaTime)
 void GSIntro::Render(sf::RenderWindow* window)
 {
 	window->draw(m_sprite);
+}
+
+
+StateTypes GSIntro::getTypeState()
+{
+	return STATE_INTRO;
 }

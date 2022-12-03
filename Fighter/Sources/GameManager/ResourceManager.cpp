@@ -5,6 +5,18 @@ ResourceManager::ResourceManager()
 	m_path = "../Data/";
 	m_texturePath = m_path + "Textures/";
 	m_fontPath = m_path + "Fonts/";
+
+	m_soundPath = m_path + "Sounds/";
+	m_allowSound = true;
+
+	m_level = 1;
+	m_isGSLevel = false;
+	m_isNextLevel = false;
+	
+	m_allowSound = true;
+	m_allowMusic = true;
+
+	m_levelCompleted.resize(17, 0);
 }
 
 ResourceManager::~ResourceManager()
@@ -99,89 +111,186 @@ sf::Font* ResourceManager::getFont(std::string name)
 	return font;
 }
 
-//void ResourceManager::addSound(std::string name)
-//{
-//	sf::Sound* sound = new sf::Sound();
-//	sf::SoundBuffer* buffet = new sf::SoundBuffer();
-//	buffet->loadFromFile(m_SoundPath + name + ".wav");
-//	sound->setBuffer(*buffet);
-//
-//	auto it = m_MapSound.find(name);
-//	if (it != m_MapSound.end()) {
-//		return;
-//	}
-//	m_MapSound.insert(std::pair<std::string, sf::Sound*>(name, sound));
-//}
-//
-//void ResourceManager::removeSound(std::string name)
-//{
-//	auto it = m_MapSound.find(name);
-//	if (it == m_MapSound.end()) {
-//		return;
-//	}
-//	if (it->second != nullptr) delete it->second;
-//	m_MapSound.erase(it);
-//}
-//
-//sf::Sound* ResourceManager::getSound(std::string name)
-//{
-//	auto it = m_MapSound.find(name);
-//	if (it != m_MapSound.end()) {
-//		return it->second;
-//	}
-//	sf::Sound* sound = new sf::Sound();
-//	sf::SoundBuffer* buffet = new sf::SoundBuffer();
-//	buffet->loadFromFile(m_SoundPath + name + ".wav");
-//	sound->setBuffer(*buffet);
-//	m_MapSound.insert(std::pair<std::string, sf::Sound*>(name, sound));
-//	return sound;
-//}
-//
-//void ResourceManager::addMusic(std::string name)
-//{
-//	sf::Music* music = new sf::Music();
-//	music->openFromFile(m_SoundPath + name + ".wav");
-//
-//	auto it = m_MapFont.find(name);
-//	if (it != m_MapFont.end()) {
-//		return;
-//	}
-//	m_MapMusic.insert(std::pair<std::string, sf::Music*>(name, music));
-//}
-//
-//void ResourceManager::removeMusic(std::string name)
-//{
-//	auto it = m_MapMusic.find(name);
-//	if (it == m_MapMusic.end()) {
-//		return;
-//	}
-//	if (it->second != nullptr) delete it->second;
-//	m_MapMusic.erase(it);
-//}
-//
-//sf::Music* ResourceManager::getMusic(std::string name)
-//{
-//	auto it = m_MapMusic.find(name);
-//	if (it != m_MapMusic.end()) {
-//		return it->second;
-//	}
-//	sf::Music* music = new sf::Music();
-//	music->openFromFile(m_SoundPath + name + ".wav");
-//	m_MapMusic.insert(std::pair<std::string, sf::Music*>(name, music));
-//	return music;
-//}
-//
-//void ResourceManager::playMusic(std::string name)
-//{
-//	if (m_allowSound) DATA->getMusic(name)->play();
-//}
-//
-//void ResourceManager::playSound(std::string name)
-//{
-//	if (m_allowSound) DATA->getSound(name)->play();
-//}
-//
-//void ResourceManager::setAllowSound(bool allow)
-//{
-//	m_allowSound = allow;
-//}
+void ResourceManager::setLevel(int level)
+{
+	m_level = level;
+}
+
+int ResourceManager::getLevel()
+{
+	return m_level;
+}
+
+void ResourceManager::setIsNextLevel(bool isNextlevel)
+{
+	m_isNextLevel = isNextlevel;
+}
+
+bool ResourceManager::getIsNextLevel()
+{
+	return m_isNextLevel;
+}
+
+void ResourceManager::setLevelCompleted(int level)
+{
+	m_levelCompleted[level] = 1;
+}
+
+int ResourceManager::getLevelCompleted(int level)
+{
+	return m_levelCompleted[level];
+}
+
+void ResourceManager::setCursor(std::string name) {
+	if (m_customCursor != nullptr) delete m_customCursor;
+	m_customCursor = new sf::Image();
+	m_customCursor->loadFromFile(m_texturePath + name + ".png");
+}
+
+sf::Image* ResourceManager::getCursor() {
+	return m_customCursor;
+}
+
+void ResourceManager::preLoad()
+{
+	if (m_isPreload == true) return;
+	addSound("start");
+	addSound("end");
+	addMusic("song");
+	m_isPreload = true;
+}
+
+void ResourceManager::addSound(std::string name)
+{
+	sf::Sound* sound = new sf::Sound();
+	sf::SoundBuffer* buffet = new sf::SoundBuffer();
+	buffet->loadFromFile(m_soundPath + name + ".wav");
+	sound->setBuffer(*buffet);
+
+	auto it = m_mapSound.find(name);
+	if (it != m_mapSound.end()) {
+		return;
+	}
+	m_mapSound.insert(std::pair<std::string, sf::Sound*>(name, sound));
+}
+
+void ResourceManager::removeSound(std::string name)
+{
+	auto it = m_mapSound.find(name);
+	if (it == m_mapSound.end()) {
+		return;
+	}
+	if (it->second != nullptr) delete it->second;
+	m_mapSound.erase(it);
+}
+
+sf::Sound* ResourceManager::getSound(std::string name)
+{
+	auto it = m_mapSound.find(name);
+	if (it != m_mapSound.end()) {
+		return it->second;
+	}
+	return this->getSound(name);
+}
+
+void ResourceManager::addMusic(std::string name)
+{
+	sf::Music* music = new sf::Music();
+	music->openFromFile(m_soundPath + name + ".wav");
+
+	auto it = m_mapMusic.find(name);
+	if (it != m_mapMusic.end()) {
+		return;
+	}
+	m_mapMusic.insert(std::pair<std::string, sf::Music*>(name, music));
+}
+
+void ResourceManager::removeMusic(std::string name)
+{
+	auto it = m_mapMusic.find(name);
+	if (it == m_mapMusic.end()) {
+		return;
+	}
+	if (it->second != nullptr) delete it->second;
+	m_mapMusic.erase(it);
+}
+
+sf::Music* ResourceManager::getMusic(std::string name)
+{
+	auto it = m_mapMusic.find(name);
+	if (it != m_mapMusic.end()) {
+		return it->second;
+	}
+	return this->getMusic(name);
+}
+
+void ResourceManager::playMusic(std::string name)
+{
+	if (m_allowMusic) {
+		sf::Music* music = this->getMusic(name);
+		if (music->getStatus() == sf::Music::Stopped || music->getStatus() == sf::Music::Paused) {
+			music->setVolume(50);
+			music->setLoop(true);
+			music->play();
+		}
+	}
+}
+
+void ResourceManager::pauseMusic(string name)
+{
+	auto it = m_mapMusic.find(name);
+	if (it != m_mapMusic.end()) {
+		it->second->pause();
+	}
+}
+
+void ResourceManager::stopMusic(string name)
+{
+	auto it = m_mapMusic.find(name);
+	if (it != m_mapMusic.end()) {
+		it->second->stop();
+	}
+}
+
+void ResourceManager::playSound(std::string name)
+{
+	if (m_allowSound) DATA->getSound(name)->play();
+}
+
+void ResourceManager::updateMusic()
+{
+	if (!m_allowMusic) {
+		for (auto it : m_mapMusic) {
+			if (it.second->getStatus() == sf::Music::Playing) {
+				it.second->pause();
+				return;
+			}
+		}
+	}
+
+	if (m_allowMusic && this->getMusic("song")->getStatus() == sf::Music::Paused) {
+		cout << "plaayyyyyyyyyy";
+		this->playMusic("song");
+	}
+	
+}
+
+bool ResourceManager::isAllowSound()
+{
+	return m_allowSound;
+}
+
+void ResourceManager::setAllowSound(bool allow)
+{
+	m_allowSound = allow;
+}
+
+bool ResourceManager::isAllowMusic()
+{
+	return m_allowMusic;
+}
+
+void ResourceManager::setAllowMusic(bool allow)
+{
+	m_allowMusic = allow;
+}

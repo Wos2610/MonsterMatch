@@ -63,8 +63,6 @@ float Block::getY()
 	return m_y;
 }
 
-
-
 void Block::setR(int r)
 {
 	m_r = r;
@@ -90,7 +88,6 @@ void Block::setIsConnected(bool isConnected)
 	m_isConnected = isConnected;
 }
 
-
 bool Block::getIsConnected()
 {
 	return m_isConnected;
@@ -98,23 +95,38 @@ bool Block::getIsConnected()
 
 void Block::Init(int type, int color, int row, int col, sf::Vector2f root, sf::Vector2f size)
 {
-	//Size cua block = 0.8 * size cua grid
-	this->setSize((float)0.8 * size);
 
+	if (type == 2) {
+		//Size cua block = 0.8 * size cua grid
+		this->setSize((float)0.8 * size);
+	}
+	else if (type == 1) {
+		this->setSize(size);
+	}
+	
 	m_type = { type, color };
 	string tp = "";
 	tp.push_back((char)m_type.second + '1');
-	this->setTexture(ResourceManager::GetInstance()->getTexture("block_" + tp));
+	this->setTexture(DATA->getTexture("block_" + tp));
 
 	m_root = root ;
-	m_size = (float)0.8 * size;
+
+	if (type == 2) {
+		m_size = (float)0.8 * size;
+	}
+	else if (type == 1) {
+		m_size = size;
+	}
+
+	cout << size.x << " " << size.y << "\n";
+	
 	m_r = row;
 	m_c = col;
 	m_x = size.x * (float)m_c;
 	m_y = size.y * (float)m_r;
 	m_root = root;
 	/*this->setPosition(m_root.x + m_x, m_root.y + m_y);*/
-	this->setPosition(m_root.x + m_x + (size.x - m_size.x)/2.f, m_root.y + m_y + (size.y - m_size.y) / 2.f);
+	this->setPosition(m_root.x + m_x + (float)(size.x - m_size.x)/2.f, m_root.y + m_y + (float)(size.y - m_size.y) / 2.f);
 }
 
 void Block::Update(float deltaTime)

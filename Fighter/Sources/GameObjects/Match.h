@@ -13,7 +13,7 @@ public:
 	~Match();
 	// Board : row, col
 	// monsterNum : so cap o can noi
-	void Init(int row, int col, int monsterNum);
+	void Init(int row, int col, int monsterNum, vector<vector<int>> m_map);
 	void Update(float deltaTime);
 	void Render(sf::RenderWindow* window);
 
@@ -37,6 +37,8 @@ private:
 
 	float m_clickTime;
 	float m_currentTime;
+	float m_drawTime;
+	float m_endTime;
 
 	// So cap o can noi o thoi diem hien tai
 	int m_blockSum;
@@ -51,8 +53,10 @@ private:
 	// Luu ma tran danh dau
 	map<pair<int, int>, int> m_mark;
 	
+	vector<vector<int>> m_currentMap;
 	vector<int> m_notConnectedBlockList;
 	vector<int> m_connectedBlockList;
+	vector<pair<int, int>> m_drawPath;
 	map<pair<int, int>, int> m_startTurnMark;
 	map<map<pair<int, int>, int>, int> m_startTurnMarkMap;
 
@@ -61,7 +65,7 @@ private:
 	// Board
 	sf::RectangleShape* m_board;
 	// Grid
-	Block* m_grid[10][10];
+	Block* m_grid[16][16];
 
 	// O ben trai tren cung cua board
 	sf::Vector2f m_rootBoard;
@@ -85,6 +89,8 @@ private:
 	int m_isConnectedBlock;
 	int m_isRevokedtedBlock;
 
+	int mark;
+	int change;
 	
 	sf::Vector2f calGridSize(int row, int col);
 
@@ -103,6 +109,8 @@ private:
 	bool isFinishTurn();
 	bool isContinueNextTurn();
 	
+	sf::Text* m_text;
 
-
+	sf::Cursor* boardCursor;
+	sf::Cursor* gameCursor;
 };

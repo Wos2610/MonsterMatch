@@ -5,6 +5,7 @@
 #include"../GameObjects//Enemy/Enemy.h"
 #include"../GameConfig.h"
 
+
 class GSPlay : public GameStateBase {
 public:
 	GSPlay();
@@ -13,12 +14,13 @@ public:
 	void Exit();
 	void Pause();
 	void Resume();
+	void Restart();
 
 	void Init();
 	void Update(float deltaTime);
 	void Render(sf::RenderWindow* window);
 
-	
+	StateTypes getTypeState();
 
 private:
 	sf::Sprite m_sprite;
@@ -30,5 +32,14 @@ private:
 	float m_clickTime;
 	float m_attackTime;
 
+	int m_row;
+	int m_col;
+	int m_monsterNum;
+	
+
 	sf::Sprite* m_background;
+	GameButton* m_pauseButton;
+	GameButton* m_backButton;
+
+	void initButton();
 };

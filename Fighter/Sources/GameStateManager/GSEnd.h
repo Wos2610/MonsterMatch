@@ -1,7 +1,11 @@
 #pragma once
 #include "GameStateBase.h"
-#include"../GameManager/ResourceManager.h"
-class GSEnd: public GameStateBase {
+#include "../GameObjects/Enemy/Enemy.h"
+#include<iostream>
+
+using namespace std;
+
+class GSEnd : public GameStateBase {
 public:
 	GSEnd();
 	virtual ~GSEnd();
@@ -14,10 +18,28 @@ public:
 	void Update(float deltaTime);
 	void Render(sf::RenderWindow* window);
 
-private:
-	sf::Sprite m_Logo;
-	float m_currentTime;
-	sf::Text* m_complete;
-
+	void initButton();
 	void initText();
+	void initMonster();
+
+	StateTypes getTypeState();
+
+private:
+	list<GameButton*> m_ListButton;
+	sf::Sprite* m_background;
+	sf::Sprite* m_frame;
+	sf::Sprite* m_banner;
+
+	GameButton* m_nextLevelButton;
+	GameButton* m_menuButton;
+	GameButton* m_restartButton;
+
+	sf::Text* m_title;
+	vector<sf::Text*> m_vectorTitle;
+
+	float m_currentTime;
+	float m_clickTime;
+
+	Enemy* m_monster;
+	int temp;
 };

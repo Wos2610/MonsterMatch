@@ -8,6 +8,8 @@ public:
 	void Run();
 	~Application();
 	sf::RenderWindow* getWindow();
+
+
 private:
 	void Init();
 	void Update(float deltaTime);

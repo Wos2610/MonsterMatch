@@ -1,3 +1,2 @@
-﻿  Match.cpp
-C:\Users\LENOVO\source\repos\MonsterMatch\Fighter\Sources\GameObjects\Match.cpp(66,82): warning C4305: 'argument': truncation from 'double' to 'float'
+﻿  LINK : program database C:\Users\LENOVO\source\repos\MonsterMatch\Debug\Fighter.pdb missing; performing full link
   Fighter.vcxproj -> C:\Users\LENOVO\source\repos\MonsterMatch\Debug\Fighter.exe

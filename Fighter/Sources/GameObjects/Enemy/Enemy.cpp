@@ -26,6 +26,16 @@ void Enemy::changeNextState(IEState::STATE nextState)
 	m_nextState = nextState;
 }
 
+void Enemy::setScale(sf::Vector2f size)
+{
+	m_currentState->setScale(size);
+}
+
+void Enemy::setPosition(sf::Vector2f pos)
+{
+	m_currentState->setPosition(pos);
+}
+
 void Enemy::Init(sf::Vector2f startPos, string name, sf::Vector2i frameSheetSize, int frameNum)
 {
 	m_idleState->Init(startPos, name, frameSheetSize, frameNum);

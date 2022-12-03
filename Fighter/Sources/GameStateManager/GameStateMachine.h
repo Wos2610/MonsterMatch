@@ -25,6 +25,7 @@ public:
 	GameStateMachine();
 	~GameStateMachine();
 
+	GameStateBase* getCurrentState();
 	void ChangeState(GameStateBase* state);
 	void ChangeState(StateTypes st);
 	void PushState(StateTypes st);

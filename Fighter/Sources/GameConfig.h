@@ -3,3 +3,4 @@
 #define SCREENHEIGHT 920
 #define TITLE "MonsterMatch"
 #define ClickTime 0.2f
+#define mapNum = 16;

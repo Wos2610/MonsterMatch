@@ -13,6 +13,9 @@ public:
 	void Init();
 	void Update(float deltaTime);
 	void Render(sf::RenderWindow* window);
+	
+
+	StateTypes getTypeState();
 private:
 	sf::Sprite m_sprite;
 	float m_currentTime;

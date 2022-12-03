@@ -9,6 +9,10 @@ public:
 	void Update(float deltaTime);
 	void Render(sf::RenderWindow* window);
 
+	void setScale(sf::Vector2f size);
+	void setPosition(sf::Vector2f pos);
+	sf::Vector2f getPosition();
+
 private:
 	IEnemy* m_player;
 	Animation* m_animation;

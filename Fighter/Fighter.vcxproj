@@ -36,10 +36,14 @@
     <ClCompile Include="Sources\GameObjects\Player\PSIdle.cpp" />
     <ClCompile Include="Sources\GameStateManager\GameStateBase.cpp" />
     <ClCompile Include="Sources\GameStateManager\GameStateMachine.cpp" />
+    <ClCompile Include="Sources\GameStateManager\GSAbout.cpp" />
     <ClCompile Include="Sources\GameStateManager\GSEnd.cpp" />
     <ClCompile Include="Sources\GameStateManager\GSIntro.cpp" />
+    <ClCompile Include="Sources\GameStateManager\GSLevel.cpp" />
     <ClCompile Include="Sources\GameStateManager\GSMenu.cpp" />
+    <ClCompile Include="Sources\GameStateManager\GSPause.cpp" />
     <ClCompile Include="Sources\GameStateManager\GSPlay.cpp" />
+    <ClCompile Include="Sources\GameStateManager\GSSetting.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Sources\Application.h" />
@@ -64,10 +68,14 @@
     <ClInclude Include="Sources\GameObjects\Player\PSIdle.h" />
     <ClInclude Include="Sources\GameStateManager\GameStateBase.h" />
     <ClInclude Include="Sources\GameStateManager\GameStateMachine.h" />
+    <ClInclude Include="Sources\GameStateManager\GSAbout.h" />
     <ClInclude Include="Sources\GameStateManager\GSEnd.h" />
     <ClInclude Include="Sources\GameStateManager\GSIntro.h" />
+    <ClInclude Include="Sources\GameStateManager\GSLevel.h" />
     <ClInclude Include="Sources\GameStateManager\GSMenu.h" />
+    <ClInclude Include="Sources\GameStateManager\GSPause.h" />
     <ClInclude Include="Sources\GameStateManager\GSPlay.h" />
+    <ClInclude Include="Sources\GameStateManager\GSSetting.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>

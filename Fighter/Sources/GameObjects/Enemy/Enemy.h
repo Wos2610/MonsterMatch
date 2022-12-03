@@ -7,6 +7,8 @@ public:
 	~Enemy();
 
 	void changeNextState(IEState::STATE nextState);
+	void setScale(sf::Vector2f size);
+	void setPosition(sf::Vector2f pos);
 
 	void Init(sf::Vector2f startPos, string name, sf::Vector2i frameSheetSize, int frameNum);
 	void Update(float deltaTime);

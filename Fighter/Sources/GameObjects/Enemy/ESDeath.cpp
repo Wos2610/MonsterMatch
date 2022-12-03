@@ -30,3 +30,13 @@ void ESDeath::Render(sf::RenderWindow* window)
 {
 	window->draw(*m_animation);
 }
+
+void ESDeath::setScale(sf::Vector2f size)
+{
+	m_animation->setScale(size);
+}
+
+void ESDeath::setPosition(sf::Vector2f pos)
+{
+	m_animation->setPosition(pos);
+}

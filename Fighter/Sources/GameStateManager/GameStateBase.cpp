@@ -3,9 +3,10 @@
 #include "GSMenu.h"
 #include "GSPlay.h"
 #include "GSEnd.h"
-//#include "GSSetting.h"
-//#include "GSHighScore.h"
-//#include "GSAbout.h"
+#include "GSPause.h"
+#include "GSLevel.h"
+#include "GSSetting.h" 
+#include "GSAbout.h"
 
 GameStateBase* GameStateBase::CreateState(StateTypes st) {
 	GameStateBase* gs = nullptr;
@@ -23,19 +24,19 @@ GameStateBase* GameStateBase::CreateState(StateTypes st) {
 		gs = new GSPlay();
 		break;
 	case STATE_SETTING:
-		//gs = new GSSetting();
+		gs = new GSSetting();
 		break;
 	case STATE_ABOUT:
-		//gs = new GSAbout();
+		gs = new GSAbout();
 		break;
 	case STATE_PAUSE:
-		//gs = new GSHighScore();
+		gs = new GSPause();
 		break;
 	case STATE_END:
 		gs = new GSEnd();
 		break;
 	case STATE_LEVEL:
-		gs = new GSEnd();
+		gs = new GSLevel();
 		break;
 	default:
 		break;

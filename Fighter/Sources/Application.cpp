@@ -6,6 +6,8 @@ void Application::Run()
     Init();
     sf::Clock clock;
     float deltaTime = 0.f;
+    DATA->preLoad();
+
     while (m_window->isOpen())
     {
         deltaTime = clock.restart().asSeconds();
@@ -39,6 +41,8 @@ void Application::Init()
     m_sprite.setScale(5, 5);*/
     GameStateMachine::GetInstance()->ChangeState(StateTypes::STATE_INTRO);
     WConnect->setWindow(m_window);
+
+
 }
 
 void Application::Update(float deltaTime)
@@ -68,3 +72,4 @@ sf::RenderWindow* Application::getWindow()
 {
     return m_window;
 }
+

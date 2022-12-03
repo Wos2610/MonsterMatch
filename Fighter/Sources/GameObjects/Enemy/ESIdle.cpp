@@ -26,3 +26,18 @@ void ESIdle::Render(sf::RenderWindow* window)
 {
 	window->draw(*m_animation);
 }
+
+void ESIdle::setScale(sf::Vector2f size)
+{
+	m_animation->setScale(size);
+}
+
+void ESIdle::setPosition(sf::Vector2f pos)
+{
+	m_animation->setPosition(pos);
+}
+
+sf::Vector2f ESIdle::getPosition()
+{
+	return m_animation->getPosition();
+}

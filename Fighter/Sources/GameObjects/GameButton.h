@@ -2,6 +2,9 @@
 #include <SFML/Graphics.hpp>
 #include"../GameManager/WindowConnector.h"
 #include"../GameConfig.h"
+#include <iostream>
+
+using namespace std;
 
 class GameButton : public sf::RectangleShape{
 public:
@@ -24,5 +27,6 @@ private:
 	void (*m_buttonClickFunction)();
 	bool m_isHandling;
 	float m_currentTime;
+	float m_clickTime;
 
 };

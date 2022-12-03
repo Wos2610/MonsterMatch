@@ -1,6 +1,11 @@
 #pragma once
 #include "../GameManager/ResourceManager.h"
 #include "GameStateMachine.h"
+#include "../GameConfig.h"
+#include<iostream>
+#include<fstream>
+
+using namespace std;
 
 class GameStateBase {
 public:
@@ -16,4 +21,5 @@ public:
 	virtual void Render(sf::RenderWindow* window) = 0;
 
 	static GameStateBase* CreateState(StateTypes st);
+	virtual StateTypes getTypeState() = 0;
 };

@@ -15,6 +15,14 @@ GameStateMachine::~GameStateMachine()
     }
 }
 
+GameStateBase* GameStateMachine::getCurrentState()
+{
+    if (m_StateStack.size() == 0) {
+        return nullptr;
+    }
+    return m_StateStack.back();
+}
+
 void GameStateMachine::ChangeState(GameStateBase* state)
 {
     m_NextState = state;
